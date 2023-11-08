@@ -1,0 +1,58 @@
+
+plugins {
+    id 'java'
+}
+
+
+
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+apply plugin: 'application'
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '4.4.3'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0-alpha-1'
+      // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+    implementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
+
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation 'org.seleniumhq.selenium:selenium-java:4.14.0'
+    
+    implementation 'org.json:json:20211205'
+
+    testImplementation group: 'org.testng', name: 'testng', version: '7.6.0'
+
+    // https://mvnrepository.com/artifact/ch.randelshofer/org.monte.media
+    implementation group: 'ch.randelshofer', name: 'org.monte.media', version: '17.1'
+
+    // https://mvnrepository.com/artifact/com.github.stephenc.monte/monte-screen-recorder
+     implementation group: 'com.github.stephenc.monte', name: 'monte-screen-recorder', version: '0.7.7.0'
+
+
+
+   // https://mvnrepository.com/artifact/org.openjfx/javafx-graphics
+    implementation group: 'org.openjfx', name: 'javafx-graphics', version: '22-ea+16'
+
+
+}
+
+//task startScript(type:Exec) {
+//    commandLine './selenium-run.sh'
+//}
+
+//run.dependsOn startScript
+
+//test.dependsOn startScript
+
+mainClassName = 'demo.App'
